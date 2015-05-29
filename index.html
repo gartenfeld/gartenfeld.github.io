@@ -20,7 +20,6 @@
 }
 .swipe-wrap > div {
   float:left;
-  width:100%;
   position: relative;
 }
 
@@ -31,11 +30,9 @@
 </head>
 <body>
 
-<h1>Swipe 2</h1>
 
 
-
-<div id='mySwipe' style='max-width:500px;margin:0 auto' class='swipe'>
+<div id='mySwipe' class='swipe'>
   <div class='swipe-wrap'>
     <div><b>0</b></div>
     <div><b>1</b></div>
@@ -63,13 +60,6 @@
 
 
 
-<div style='text-align:center;padding-top:20px;'>
-  
-  <button onclick='mySwipe.prev()'>prev</button> 
-  <button onclick='mySwipe.next()'>next</button>
-
-</div>
-
 
 
 
@@ -83,7 +73,7 @@ window.mySwipe = Swipe(elem, {
   // startSlide: 4,
   // auto: 3000,
   // continuous: true,
-  // disableScroll: true,
+     disableScroll: true,
   // stopPropagation: true,
   // callback: function(index, element) {},
   // transitionEnd: function(index, element) {}
