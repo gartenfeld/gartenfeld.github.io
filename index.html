@@ -3,7 +3,7 @@
 <head>
 <title>Swipe 2</title>
 <meta http-equiv="X-UA-Compatible" content="IE=8">
-<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/> 
+<meta name='viewport' content='width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0'/> 
 <link href='style.css' rel='stylesheet'/>
 <style>
 
@@ -34,14 +34,15 @@
 
 <div id='mySwipe' class='swipe'>
   <div class='swipe-wrap'>
-    <div><b><div>0</div></b></div>
+    <div>
+      <div class="content">
+        <div class="some-text">00</div>
+      </div>
+    </div>
     <div><b>1</b></div>
     <div><b>2</b></div>
     <div><b>3</b></div>
-    <div><b>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat.</b></div>
+    <div><b>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</b></div>
     <div><b>5</b></div>
     <div><b>6</b></div>
     <div><b>7</b></div>
@@ -73,7 +74,7 @@
 // pure JS
 var elem = document.getElementById('mySwipe');
 window.mySwipe = Swipe(elem, {
-  // startSlide: 4,
+  //   startSlide: 4,
   // auto: 3000,
   // continuous: true,
      disableScroll: true,
