@@ -55,21 +55,17 @@ html, body {
 }
 
 #mySwipe {
-  height: 100%;
   display: block;
-  text-align: center;  
-  box-shadow: 0 1px #EBEBEB;
-  background: #eee;
-  border: 1px solid;
-  border-color: #E5E5E5 #D3D3D3 #B9C1C6;
-  border-radius: 5px;
+   
 }
 
 .swipe-wrap div b {
   color: #000;
+  display: block;
+  padding-top: 40%;
+  padding-bottom: 40%;
   font-size: 40px;
   font-weight: bold;
-  margin-top: 30%;
-  background: #ccc;
-  display: block;
+  text-align: center; 
+  background: radial-gradient(ellipse at center, rgba(0,201,252,1) 0%,rgba(0,155,211,1) 100%);
 }
