@@ -33,7 +33,7 @@ body {
 }
 
 .headline {
-  padding-top: 18vh;
+  padding-top: 16vh;
   color: #000;
   text-shadow: 2px 2px 3px #eee;
   font-size: 32px;
@@ -50,11 +50,11 @@ body {
 }
 
 .unter {
-  padding-top: 14vh;
+  padding-top: 12vh;
   padding-left: 9vw;
   padding-right: 9vw;
   color: #777;
-  font-size: 24px;
+  font-size: 22px;
   font-family: 'Garamond';
   text-shadow: 1px 1px 0px #eee;
 
