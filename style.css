@@ -29,8 +29,10 @@ html, body {
 
 .headline {
   padding-top: 20vh;
+  padding-left: 5vw;
+  padding-right: 5vw;
   color: #000;
-  font-size: 40px;
+  font-size: 32px;
   font-weight: bold;
   text-align: center;
 }
