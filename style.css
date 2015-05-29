@@ -1,38 +1,61 @@
-body {
-  font-family: sans-serif;
-  margin: 0 0 0 0;
+html {
+  background: #ccc;
 }
 
-html, body {
-  background: #ccc;
+body {
+  margin: 0 0 0 0;
 }
 
 .swipe {
   overflow: hidden;
-  visibility: hidden;
   position: relative;
+  visibility: hidden;
 }
 .swipe-wrap {
   overflow: hidden;
   position: relative;
 }
 .swipe-wrap > div {
-  float:left;
   position: relative;
+  float:left;
 }
 
 .slab {
   width: 100vw;
   height: 100vh;
   background: radial-gradient(ellipse at center, #eee 0%, #ccc 100%);
+  text-align: center;
+}
+
+.headline {
+  padding-left: 5vw;
+  padding-right: 5vw;
 }
 
 .headline {
   padding-top: 20vh;
-  padding-left: 5vw;
-  padding-right: 5vw;
   color: #000;
+  text-shadow: 2px 2px 3px #eee;
   font-size: 32px;
-  font-weight: bold;
-  text-align: center;
+  font-weight: 700;
+  font-family: 'Helvetica', sans-serif;
+}
+
+.satz {
+  padding-top: 7vh;
+  padding-left: 9vw;
+  padding-right: 9vw;
+  color: #222;
+  font-size: 26px;
+}
+
+.unter {
+  padding-top: 20vh;
+  padding-left: 9vw;
+  padding-right: 9vw;
+  color: #777;
+  font-size: 26px;
+  font-family: 'Garamond';
+  text-shadow: 1px 1px 0px #eee;
+
 }
