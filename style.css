@@ -12,6 +12,10 @@ html, body {
 .swipe-wrap > div {
   float:left;
   background: radial-gradient(ellipse at center, rgba(0,201,252,1) 0%,rgba(0,155,211,1) 100%);
+  color: #000;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
 }
 
 .content {
@@ -21,8 +25,5 @@ html, body {
 .some-text {
   height: 100%;
   margin-top: 30%;
-  color: #000;
-  font-size: 40px;
-  font-weight: bold;
-  text-align: center;
+
 }
