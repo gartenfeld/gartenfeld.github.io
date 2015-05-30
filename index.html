@@ -4,7 +4,9 @@
 <head>
   <title>Swipe me.</title>
   <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
-  <link href='style.css' rel='stylesheet'/>
+  <link href='css/style.css' rel='stylesheet'/>
+  <audio id="aud_1" type="audio/wav" src="audio/DE_2748_LL_beantragen_Verb.wav" preload="auto"></audio>
+  <audio id="aud_2" type="audio/ogg" src="audio/DE_3695_LL_Zulassung_Sub.ogg" preload="auto"></audio>
 </head>
 
 <body>
@@ -28,8 +30,8 @@
 
       <div>
         <div class="slab">
-          <div class="headline"><a href="#" onClick="soundManager.play('aud_1');">beantragen</a></div>
-          <div class="satz">Für dieses Auto muss ich noch eine <a href="#" onClick="soundManager.play('aud_2');">Zulassung</a> beantragen.</div>
+          <div class="headline"><a href="#" onClick="playAudio('aud_1')">beantragen</a></div>
+          <div class="satz">Für dieses Auto muss ich noch eine <a href="#" onClick="playAudio('aud_2')">Zulassung</a> beantragen.</div>
           <div class="unter">apply for</div>
         </div>
       </div>
@@ -49,9 +51,10 @@
     </div>
   </div>
 
-  <!-- <script src="jquery-2.1.1.min.js"></script> -->
-  <script src='swipe.js'></script>
-  <script src="soundmanager2-nodebug-jsmin.js"></script>
+  <!-- <script src="lib/jquery-2.1.1.min.js"></script> -->
+  <!-- <script src="lib/soundmanager2-nodebug-jsmin.js"></script> -->
+  <script src='lib/swipe.js'></script>
+
   <script>
 
     var elem = document.getElementById('mySwipe');
@@ -71,42 +74,10 @@
                     };
     window.mySwipe = Swipe(elem, settings);
 
-    // var playAudio = function(aud) {
-    //   var a = document.getElementById(aud);
-    //   a.load();
-    //   a.play();
-    // };
-
-    function loadSM(){
-      soundManager.setup({
-        url: 'swf/',
-        onready: function() {
-
-          soundManager.createSound({
-              id: 'aud_1',
-              url: 'audio/DE_2748_LL_beantragen_Verb.ogg',
-              flashVersion: 9,
-              stream: true,
-              autoLoad: false,
-              autoPlay: false,
-              volume: 60,
-          }).load();
-
-          soundManager.createSound({
-              id: 'aud_2',
-              url: 'audio/DE_3695_LL_Zulassung_Sub.ogg',
-              flashVersion: 9,
-              stream: true,
-              autoLoad: false,
-              autoPlay: false,
-              volume: 60,
-          }).load();
-
-        }
-      });
-    }
-
-    loadSM();
+    var playAudio = function(aud) {
+      var a = document.getElementById(aud);
+      a.play();
+    };
 
     //$( document ).ready(function() {
     //  window.mySwipe = $('#mySwipe').Swipe(settings).data('Swipe');
