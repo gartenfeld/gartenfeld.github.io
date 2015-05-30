@@ -1,7 +1,7 @@
 html, body {
   background: #ccc;
   margin: 0 0 0 0;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 .swipe {
@@ -23,6 +23,7 @@ html, body {
   height: 100vh;
   background: radial-gradient(ellipse at center, #eee 0%, #ccc 100%);
   text-align: center;
+  overflow: hidden;
 }
 
 .headline {

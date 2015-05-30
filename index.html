@@ -5,69 +5,72 @@
   <title>Swipe me.</title>
   <meta http-equiv="X-UA-Compatible" content="IE=8">
   <meta name='viewport' content='width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0'/> 
-  <script>
-    document.ontouchstart = function(e){ 
-        e.preventDefault(); 
-    };
-  </script>
+
   <link href='style.css' rel='stylesheet'/>
 </head>
 
 <body>
 
+  <script>
+    document.ontouchstart = function(e){ 
+      e.preventDefault(); 
+    };
+  </script>
 
+  <div id='mySwipe' class='swipe'>
+    <div class='swipe-wrap'>
 
-<div id='mySwipe' class='swipe'>
-  <div class='swipe-wrap'>
-
-    <div>
-      <div class="slab">
-        <div class="headline">ˈʃuːl|aʳba͜et</div>
-        <div class="satz">Unsere Französischlehrerin hat für morgen eine Schularbeit angesagt.</div>
-        <div class="unter">maybe an announcement</div>
+      <div>
+        <div class="slab">
+          <div class="headline">ˈʃuːl|aʳba͜et</div>
+          <div class="satz">Unsere Französischlehrerin hat für morgen eine Schularbeit angesagt.</div>
+          <div class="unter">maybe an announcement</div>
+        </div>
       </div>
-    </div>
 
-    <div>
-      <div class="slab">
-        <div class="headline">beantragen</div>
-        <div class="satz">Für dieses Auto muss ich noch eine Zulassung beantragen.</div>
-        <div class="unter">apply for</div>
+      <div>
+        <div class="slab">
+          <div class="headline">beantragen</div>
+          <div class="satz">Für dieses Auto muss ich noch eine Zulassung beantragen.</div>
+          <div class="unter">apply for</div>
+        </div>
       </div>
-    </div>
 
-    <div>
-      <div class="slab">
-        <div class="headline">A <span style="color:#CC3300;font-size:100%;">♥</span> for you.</div>
+      <div>
+        <div class="slab">
+          <div class="headline">A <span style="color:#CC3300;font-size:100%;">♥</span> for you.</div>
+        </div>
       </div>
-    </div>
 
-    <div>
-      <div class="slab">
-        <div class="headline">Kermit is a great frog.</div>
+      <div>
+        <div class="slab">
+          <div class="headline">Kermit is a great frog.</div>
+        </div>
       </div>
-    </div>
 
+    </div>
   </div>
-</div>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src='swipe.js'></script>
-<script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src='swipe.js'></script>
+  <script>
 
-// pure JS
-var elem = document.getElementById('mySwipe');
-window.mySwipe = Swipe(elem, {
-     startSlide: 0,
-  // auto: 3000,
-  // continuous: true,
-     disableScroll: true,
-  // stopPropagation: true,
-  // callback: function(index, element) {},
-  // transitionEnd: function(index, element) {}
-});
+  // pure JS
+  var elem = document.getElementById('mySwipe');
+  window.mySwipe = Swipe(elem, {
+    startSlide: 0,
+    // auto: 3000,
+    // continuous: true,
+    disableScroll: true,
+    // stopPropagation: true,
+    // callback: function(index, element) {},
+    // transitionEnd: function(index, element) {}
+  });
 
-// with jQuery
-// window.mySwipe = $('#mySwipe').Swipe().data('Swipe');
+  // with jQuery
+  // window.mySwipe = $('#mySwipe').Swipe().data('Swipe');
 
-</script>
+  </script>
+
+</body>
+</html>
