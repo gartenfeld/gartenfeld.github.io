@@ -25,18 +25,26 @@ body {
   text-align: center;
 }
 
-.headline {
-  padding-left: 5vw;
-  padding-right: 5vw;
+.headline a {
+  text-decoration: none;
+  color: #000;
 }
 
 .headline {
   padding-top: 16vh;
+  padding-left: 5vw;
+  padding-right: 5vw;
   color: #000;
   text-shadow: 2px 2px 3px #eee;
   font-size: 32px;
   font-weight: 700;
   font-family: 'Helvetica', sans-serif;
+}
+
+.satz a {
+  text-decoration: none;
+  color: #111;
+  font-weight: bold;
 }
 
 .satz {

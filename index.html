@@ -5,6 +5,8 @@
   <title>Swipe me.</title>
   <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
   <link href='style.css' rel='stylesheet'/>
+  <audio id="aud_1" src="audio/DE_2748_LL_beantragen_Verb.mp3" preload></audio>
+  <audio id="aud_2" src="audio/DE_3695_LL_Zulassung_Sub.mp3" preload></audio>
 </head>
 
 <body>
@@ -28,8 +30,8 @@
 
       <div>
         <div class="slab">
-          <div class="headline">beantragen</div>
-          <div class="satz">Für dieses Auto muss ich noch eine Zulassung beantragen.</div>
+          <div class="headline"><a href="#" onClick="document.getElementById('aud_1').play()">beantragen</a></div>
+          <div class="satz">Für dieses Auto muss ich noch eine <a href="#" onClick="document.getElementById('aud_2').play()">Zulassung</a> beantragen.</div>
           <div class="unter">apply for</div>
         </div>
       </div>
@@ -49,29 +51,33 @@
     </div>
   </div>
 
-  <script src="jquery-2.1.1.min.js"></script>
+  <!-- <script src="jquery-2.1.1.min.js"></script> -->
   <script src='swipe.js'></script>
   <script>
 
-  // pure JS
-  // var elem = document.getElementById('mySwipe');
-  var settings = {
-                    startSlide: 0,
-                    // auto: 3000,
-                    // continuous: true,
-                    disableScroll: true,
-                    // stopPropagation: true,
-                    // callback: function(index, element) {},
-                    // transitionEnd: function(index, element) {}
-                  };
-  // window.mySwipe = Swipe(elem, settings);
+    var elem = document.getElementById('mySwipe');
+    var settings = {
+                      startSlide: 0,
+                      speed: 240,
+                      // auto: 3000,
+                      // continuous: true,
+                      disableScroll: true,
+                      // stopPropagation: true,
+                      //callback: function(index, element) {
+                      //  console.log(index, element);
+                      //},
+                      //transitionEnd: function(index, element) {
+                      // console.log(index);
+                      //}
+                    };
+    window.mySwipe = Swipe(elem, settings);
 
-  $( document ).ready(function() {
-    window.mySwipe = $('#mySwipe').Swipe(settings).data('Swipe');
-  });
+    //$( document ).ready(function() {
+    //  window.mySwipe = $('#mySwipe').Swipe(settings).data('Swipe');
+    //});
 
-  // with jQuery
-  // window.mySwipe = $('#mySwipe').Swipe().data('Swipe');
+    // with jQuery
+    // window.mySwipe = $('#mySwipe').Swipe().data('Swipe');
 
   </script>
 
