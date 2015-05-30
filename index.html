@@ -52,7 +52,7 @@
   </div>
 
   <script src="lib/jquery-2.1.1.min.js"></script>
-  <!-- <script src="lib/soundmanager2-nodebug-jsmin.js"></script> -->
+  <script src="lib/soundmanager2-nodebug-jsmin.js"></script>
   <script src='lib/swipe.js'></script>
 
   <script>
@@ -80,10 +80,28 @@
       document.getElementById('t').innerHTML ='blah';
     };
 
+    var loadSM = function(){
+      soundManager.setup({
+        url: 'swf/',
+        onready: function() {
+          soundManager.createSound({
+              id: 's_1',
+              url: 'audio/DE_2748_LL_beantragen_Verb.ogg',
+              flashVersion: 9,
+              stream: true,
+              autoLoad: false,
+              autoPlay: false,
+              volume: 60
+          }).load();
+        }
+      });
+    };
+
     $( document ).ready(function() {
       $('#link_1').on('touchstart click', function(){ 
-        playAudio('aud_1');
+        soundManager.play('s_1');
       });
+      loadSM();
     //  window.mySwipe = $('#mySwipe').Swipe(settings).data('Swipe');
     });
 
