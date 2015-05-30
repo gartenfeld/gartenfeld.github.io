@@ -1,0 +1,66 @@
+body {
+  background: #ccc;
+  margin: 0 0 0 0;
+  overflow: hidden;
+}
+
+.swipe {
+  overflow: hidden;
+  position: relative;
+  visibility: hidden;
+}
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.swipe-wrap > div {
+  position: relative;
+  float:left;
+}
+
+.slab {
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(ellipse at center, #eee 0%, #ccc 100%);
+  text-align: center;
+}
+
+.headline a {
+  text-decoration: none;
+  color: #000;
+}
+
+.headline {
+  padding-top: 16vh;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  color: #000;
+  text-shadow: 2px 2px 3px #eee;
+  font-size: 32px;
+  font-weight: 700;
+  font-family: 'Helvetica', sans-serif;
+}
+
+.satz a {
+  text-decoration: none;
+  color: #111;
+  font-weight: bold;
+}
+
+.satz {
+  padding-top: 7vh;
+  padding-left: 9vw;
+  padding-right: 9vw;
+  color: #222;
+  font-size: 22px;
+}
+
+.unter {
+  padding-top: 12vh;
+  padding-left: 9vw;
+  padding-right: 9vw;
+  color: #777;
+  font-size: 22px;
+  font-family: 'Garamond';
+  text-shadow: 1px 1px 0px #eee;
+}

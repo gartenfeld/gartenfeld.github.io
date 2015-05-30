@@ -32,7 +32,7 @@
         <div class="slab">
           <div class="headline"><a href="#" onClick="playAudio('aud_1')">beantragen</a></div>
           <div class="satz">Für dieses Auto muss ich noch eine <a href="#" onClick="playAudio('aud_2')">Zulassung</a> beantragen.</div>
-          <div class="unter">apply for</div>
+          <div class="unter" id="t">apply for</div>
         </div>
       </div>
 
@@ -77,6 +77,7 @@
     var playAudio = function(aud) {
       var a = document.getElementById(aud);
       a.play();
+      document.getElementById('t').innerHTML ='blah';
     };
 
     //$( document ).ready(function() {
