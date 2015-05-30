@@ -1,8 +1,7 @@
 html, body {
   background: #ccc;
   margin: 0 0 0 0;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: none;
+  overflow: hidden;
 }
 
 .swipe {
@@ -21,9 +20,10 @@ html, body {
 
 .slab {
   width: 100vw;
-  height: 100vh;
+  height: 101vh;
   background: radial-gradient(ellipse at center, #eee 0%, #ccc 100%);
   text-align: center;
+
 }
 
 .headline {
