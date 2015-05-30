@@ -6,7 +6,7 @@
   <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
   <link href='css/style.css' rel='stylesheet'/>
   <audio id="aud_1" type="audio/wav" src="audio/DE_2748_LL_beantragen_Verb.wav" preload="auto"></audio>
-  <audio id="aud_2" type="audio/ogg" src="audio/DE_3695_LL_Zulassung_Sub.ogg" preload="auto"></audio>
+  <audio id="aud_2" type="audio/wav" src="audio/DE_3695_LL_Zulassung_Sub.wav" preload="auto"></audio>
 </head>
 
 <body>
@@ -77,7 +77,6 @@
     var playAudio = function(aud) {
       var a = document.getElementById(aud);
       a.play();
-      document.getElementById('t').innerHTML ='Playing '+ aud;
     };
 
     $( document ).ready(function() {
