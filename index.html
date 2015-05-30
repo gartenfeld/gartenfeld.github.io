@@ -30,8 +30,8 @@
 
       <div>
         <div class="slab">
-          <div class="headline"><a href="#" onClick="document.getElementById('aud_1').play()">beantragen</a></div>
-          <div class="satz">Für dieses Auto muss ich noch eine <a href="#" onClick="document.getElementById('aud_2').play()">Zulassung</a> beantragen.</div>
+          <div class="headline"><a href="#" onClick="document.getElementById('aud_1').load();document.getElementById('aud_1').play()">beantragen</a></div>
+          <div class="satz">Für dieses Auto muss ich noch eine <a href="#" onClick="document.getElementById('aud_1').load();document.getElementById('aud_2').play()">Zulassung</a> beantragen.</div>
           <div class="unter">apply for</div>
         </div>
       </div>
@@ -57,7 +57,7 @@
 
     var elem = document.getElementById('mySwipe');
     var settings = {
-                      startSlide: 1,
+                      startSlide: 0,
                       speed: 240,
                       // auto: 3000,
                       // continuous: true,
