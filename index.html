@@ -72,11 +72,11 @@
                       //},
                       transitionEnd: function(index, element) {
                         if (index === maxIdx) {
-                          curIdx = index;
                           loadMore(index);
                         }
                       }
                     };
+
     window.mySwipe = Swipe(elem, settings);
 
     var loadMore = function(idx) {
@@ -104,8 +104,8 @@
           $('#wrap').append(wrapped);
         }
 
+        settings.startSlide = maxIdx;
         maxIdx = to;
-        settings.startSlide = curIdx;
         window.mySwipe = Swipe(elem, settings);
       }
     };
