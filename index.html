@@ -51,10 +51,11 @@
     </div>
   </div>
 
-  <script src='lib/lextra.js'></script>
+
   <script src="lib/jquery-2.1.1.min.js"></script>
   <!-- <script src="lib/soundmanager2-nodebug-jsmin.js"></script> -->
   <script src='lib/swipe.js'></script>
+  <script src='lib/excerpt.js'></script>
 
   <script>
     var maxIdx = 3,
@@ -80,7 +81,7 @@
     window.mySwipe = Swipe(elem, settings);
 
     var loadMore = function(idx) {
-      if ( idx < 3989 ) {
+      if ( idx < 589 ) {
         var from = maxIdx - 3,
             to = from + 9;
         for (var i=from; i<=to; i++) {
@@ -105,7 +106,7 @@
         }
 
         settings.startSlide = maxIdx;
-        maxIdx = to;
+        maxIdx = to + 4;
         window.mySwipe = Swipe(elem, settings);
       }
     };
