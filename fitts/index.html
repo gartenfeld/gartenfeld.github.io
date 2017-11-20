@@ -103,7 +103,7 @@
           renderMole(offset);
           $start.hide();
           if (f) {
-            var predictedMT = Math.min(f(ID), 200);
+            var predictedMT = Math.max(f(ID), 200);
             console.log('Predicted MT: ' + predictedMT.toFixed());
             timeWindow = challengeFactor * predictedMT;
             console.log('Level Factor: ' + challengeFactor.toFixed(2));
