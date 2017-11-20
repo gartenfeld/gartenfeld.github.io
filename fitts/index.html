@@ -84,8 +84,9 @@
           if (X.length > 1 && Y.length > 1) {
             f = regress(X, Y, params);
             upLevel();
-            console.log('Fitted: y = ' + params.m.toFixed(2) +
-              ' x + ' + params.b.toFixed(2));
+            var a = params.b.toFixed();
+            var b = params.m.toFixed();
+            console.log('Fitted: MT = ' + a + ' + ' + b + '·ID');
           }
         }
 
@@ -98,7 +99,7 @@
           D = startButtonWidth / 2 + offset + W / 2;
           // Calculate the index of difficulty
           ID = Math.log2(2 * D / W);
-          console.log('ID: ' + ID.toFixed(4));
+          console.log('ID: ' + ID.toFixed(2));
           renderMole(offset);
           $start.hide();
           if (f) {
@@ -126,7 +127,7 @@
             Y.push(MT);
             reFit();
           } else {
-            console.log('Too late. Params not refitted.');
+            console.log('Params not refitted.');
             downLevel();
           }
 
