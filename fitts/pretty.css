@@ -7,7 +7,7 @@ body {
   height: 320px;
   border-radius: 4px;
   /*border: 1px solid grey;*/
-  padding: 24px;
+  padding-left: 24px;
   display: flex;
   align-items: center;
   /*justify-content: space-between;*/
