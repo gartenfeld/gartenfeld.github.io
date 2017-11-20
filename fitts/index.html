@@ -1,0 +1,145 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="pretty.css">
+  </head>
+  <body>
+    <div class="displays">Level 0</div>
+    <div class="stage">
+      <div class="start-box">
+        <div class="start">START</div>
+      </div>
+      <div class="mole"></div>
+    </div>
+    <script type="text/javascript" src="bundle.js"></script>
+    <script>
+      (function() {
+
+        // Constants
+        var startButtonWidth = 50;
+        var minSize = 50;
+        var maxSize = 300;
+        var minOffset = 100;
+        var maxOffset = 850;
+
+        var X = []; // All ID values
+        var Y = []; // All MT values
+        var W;
+        var D;
+        var ID;
+
+        var startTime;
+        var timer;
+
+        var params = {}; // y = mx + b
+        var f; // Fitt's function
+
+        var level = 0;
+        var challengeFactor = 2;
+        var timeWindow = 1000;
+
+        // jQuery objects
+        var $start = $('.start');
+        var $mole = $('.mole');
+        var $displays = $('.displays');
+
+        function updateDisplay() {
+          $displays.text('Level ' + level + ', Factor: ' + challengeFactor.toFixed(2));
+        }
+
+        function upLevel() {
+          level += 1;
+          challengeFactor *= 0.95;
+          console.log('Level Up!');
+          updateDisplay();
+        }
+
+        function downLevel() {
+          level -= 1;
+          challengeFactor *= 1.05;
+          console.log('Level Down!');
+          updateDisplay();
+        }
+
+        function getRandomIntegerBetween(min, max) {
+          return Math.round(Math.random() * (max - min) + min);
+        }
+
+        function renderMole(offset) {
+          $mole.css({
+            opacity: 1,
+            width: W + 'px',
+            height: W + 'px',
+            left: offset + 'px'
+          });
+          $mole.show();
+        }
+
+        function onTimeout() {
+          $mole.css({ opacity: 0.2 });
+          clearTimeout(timer);
+        }
+
+        function reFit() {
+          if (X.length > 1 && Y.length > 1) {
+            f = regress(X, Y, params);
+            upLevel();
+            console.log('Fitted: y = ' + params.m.toFixed(2) +
+              ' x + ' + params.b.toFixed(2));
+          }
+        }
+
+        function newGame() {
+          // Generate a size between min and max specified above
+          W = getRandomIntegerBetween(minSize, maxSize);
+          // Generate random offset between a range
+          var offset = getRandomIntegerBetween(minOffset, maxOffset);
+          // Calculat the distance from offset
+          D = startButtonWidth / 2 + offset + W / 2;
+          // Calculate the index of difficulty
+          ID = Math.log2(2 * D / W);
+          console.log('ID: ' + ID.toFixed(4));
+          renderMole(offset);
+          $start.hide();
+          if (f) {
+            var predictedMT = Math.min(f(ID), 200);
+            console.log('Predicted MT: ' + predictedMT.toFixed());
+            timeWindow = challengeFactor * predictedMT;
+            console.log('Level Factor: ' + challengeFactor.toFixed(2));
+            console.log('Time Allowed: ' + timeWindow.toFixed());
+          }
+          timer = setTimeout(onTimeout, timeWindow);
+          startTime = Date.now();
+        }
+
+        function onHit() {
+          clearTimeout(timer);
+          $mole.hide();
+
+          var MT = Date.now() - startTime;
+          console.log('Recorded MT: ' + MT);
+
+          $start.show();
+
+          if (MT < timeWindow) {
+            X.push(ID);
+            Y.push(MT);
+            reFit();
+          } else {
+            console.log('Too late. Params not refitted.');
+            downLevel();
+          }
+
+        }
+
+        $mole.hide();
+
+        $start.click(newGame);
+        $mole.mouseenter(onHit);
+
+
+      })();
+    </script>
+  </body>
+</html>
+
